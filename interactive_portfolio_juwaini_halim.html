@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhua Halim — Personal Creative Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Bricolage Grotesque (for bold editorial look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Bricolage Grotesque', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            deep: '#04221a',      // Ultra deep Islamic emerald
+                            lime: '#a3e635',      // Vibrant Neon Lime (like the reference)
+                            green: '#15803d',     // Medium rich green
+                            accent: '#3b82f6',    // Electric Blue accent
+                            dark: '#121212',      // Deep card dark background
+                            cream: '#f4f6f1',     // Elegant off-white background
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .rotated-badge {
+            transform: rotate(-1.5deg);
+        }
+        .rotated-badge-reverse {
+            transform: rotate(1deg);
+        }
+        .vertical-text {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(4, 34, 26, 0.9);
+        }
+        .dark .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(163, 230, 53, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-deep font-sans transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100 overflow-x-hidden pb-12">
+
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex justify-between items-center relative z-20">
+        <a href="#home" class="flex items-center space-x-2">
+            <div class="w-9 h-9 rounded-xl bg-brand-deep dark:bg-brand-lime text-brand-lime dark:text-brand-deep font-display font-extrabold text-base flex items-center justify-center neo-shadow">
+                JH
+            </div>
+            <div class="leading-none">
+                <span class="block text-xs font-extrabold uppercase tracking-tight text-brand-deep dark:text-white">Jhua Halim</span>
+                <span class="block text-[9px] text-zinc-500 dark:text-brand-lime font-medium">Creative EdTech Specialist</span>
+            </div>
+        </a>
+        
+        <!-- Toggle Dark Mode -->
+        <div class="flex items-center space-x-3">
+            <a href="#contact" class="px-4 py-2 text-xs font-bold bg-brand-deep text-brand-lime dark:bg-brand-lime dark:text-brand-deep rounded-xl hover:opacity-95 transition neo-shadow">
+                Mulai Kolaborasi <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+            <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-brand-deep dark:text-brand-lime shadow-sm hover:scale-105 transition">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header id="home" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 relative overflow-hidden">
+        <!-- Abstract background curves from the reference -->
+        <div class="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-brand-lime/20 dark:bg-brand-lime/10 blur-3xl pointer-events-none z-0"></div>
+        <div class="absolute top-1/2 left-[-100px] w-80 h-80 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 blur-3xl pointer-events-none z-0"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
+            <!-- Left: Personal Photo/Avatar Cutout Container with headphone and badge -->
+            <div class="md:col-span-5 flex justify-center order-2 md:order-1">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                    <!-- Circular and wavy colorful abstract shapes like the reference -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-lime via-emerald-400 to-amber-400 rounded-[2.5rem] rotate-3 opacity-30 dark:opacity-20 animate-pulse"></div>
+                    <div class="absolute inset-2 bg-brand-deep dark:bg-zinc-900 rounded-[2.5rem] -rotate-3 border-2 border-brand-lime/30 shadow-2xl"></div>
+                    
+                    <!-- Avatar Illustration Frame -->
+                    <div class="absolute inset-4 rounded-[2rem] overflow-hidden">
+                        <img
+                            src="foto.png"
+                            alt="Foto Jhua Halim"
+                            class="w-full h-full object-cover object-top"
+                        />
+                        <!-- Overlay nama & tag di bawah foto -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-zinc-950/90 to-transparent px-4 pb-4 pt-8">
+                            <h2 class="text-lg font-display font-extrabold text-brand-lime leading-tight">Jhua Halim</h2>
+                            <div class="mt-2 flex flex-wrap gap-1.5">
+                                <span class="bg-zinc-800 text-[9px] text-brand-lime font-bold px-2 py-0.5 rounded-md border border-zinc-700">#ArabicTeacher</span>
+                                <span class="bg-zinc-800 text-[9px] text-amber-400 font-bold px-2 py-0.5 rounded-md border border-zinc-700">#EdTechConsultant</span>
+                            </div>
+                        </div>
+                        <!-- Badge GR pojok kanan atas -->
+                        <span class="absolute top-3 right-3 bg-amber-400 text-brand-deep text-[10px] font-black px-2 py-0.5 rounded-full border-2 border-brand-deep">Gr.</span>
+                    </div>
+
+                    <!-- Small floating overlay stickers like the reference -->
+                    <div class="absolute -top-2 -right-2 bg-amber-400 text-brand-deep font-black text-[10px] px-3 py-1 rounded-xl shadow-lg border-2 border-brand-deep rotate-[12deg] uppercase">
+                        ⭐ Bersertifikasi Google & Microsoft
+                    </div>
+                    <div class="absolute -bottom-2 -left-2 bg-brand-lime text-brand-deep font-black text-[11px] px-3 py-1.5 rounded-xl shadow-lg border-2 border-brand-deep rotate-[-8deg] uppercase">
+                        🗣️ Skor Tasheel 100/100
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-5 text-center md:text-left order-1 md:order-2">
+                <div class="inline-flex items-center gap-1.5 bg-zinc-900 text-white dark:bg-zinc-800 px-3.5 py-1.5 rounded-full border border-zinc-700 text-xs font-semibold tracking-wider">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-lime animate-ping"></span>
+                    SOCIAL MEDIA & EDTECH CREATIVE
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.05] tracking-tight">
+                    Hello!! <br>
+                    I'm <span class="bg-brand-lime text-brand-deep px-3 py-0.5 rounded-xl inline-block rotated-badge neo-shadow">Jhua,</span> <br>
+                    I'm an <span class="text-emerald-700 dark:text-brand-lime underline decoration-amber-400 decoration-wavy">EdTech Creator</span> <br>
+                    For Social Media.
+                </h1>
+
+                <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-xl leading-relaxed">
+                    Nama asli saya <span class="font-bold text-brand-deep dark:text-white">Muh. Juwaini Halim, S.Pd., Gr.</span> Pendidik Bahasa Arab & Wakil Kepala Madrasah Bidang Kurikulum di <span class="font-bold underline decoration-brand-lime decoration-2">MAS PP Al Urwatul Wutsqaa</span> yang berfokus pada desain visual, integrasi AI, dan gamifikasi interaktif.
+                </p>
+
+                <!-- Action row -->
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start pt-2">
+                    <a href="#experience" class="px-6 py-3 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 font-bold text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 transition">
+                        Lihat CV & Pengalaman <i class="fas fa-scroll ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- Left Labels / Vertical Accent Column like the reference -->
+            <div class="lg:col-span-1 hidden lg:flex items-center justify-center">
+                <div class="vertical-text text-[38px] font-display font-black uppercase tracking-widest text-brand-lime/60 dark:text-brand-lime/10 select-none">
+                    ARABIC TEACHER
+                </div>
+            </div>
+
+            <!-- About Me Card (Premium Dark Card resembling reference mockup) -->
+            <div class="lg:col-span-11 bg-zinc-900 text-zinc-100 dark:bg-zinc-900 rounded-[2.5rem] p-6 sm:p-10 border border-zinc-800 shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <!-- Glowing corner accents -->
+                <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-brand-lime/10 rounded-full blur-xl"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- About text -->
+                    <div class="md:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-brand-lime uppercase tracking-widest font-black text-xs block mb-1">PROFIL SINGKAT</span>
+                            <h3 class="text-2xl sm:text-3xl font-display font-black text-white">About Me</h3>
+                        </div>
+                        
+                        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+                            Saya adalah seorang pendidik Bahasa Arab tingkat SMA/MA yang mendedikasikan diri pada ekosistem kreatif. Sejak 2018, saya aktif menjadi bagian dari komunitas pengembangan konten digital <strong class="text-brand-lime">"Youth Ideal"</strong>. 
+                        </p>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                            Sebagai <strong class="text-white">Wakil Kepala Madrasah Bidang Kurikulum</strong>, saya merestrukturisasi sistem administratif konvensional menjadi serbadigital berbasis Google Workspace, memfasilitasi kelulusan puluhan siswa ke PTN lewat SNBP, serta mengelola platform media sosial sekolah agar tetap relevan di mata anak muda generasi digital.
+                        </p>
+
+                        <!-- Special skills tag pill grid -->
+                        <div class="pt-2">
+                            <span class="text-zinc-500 uppercase tracking-widest font-bold text-[10px] block mb-2">KEAHLIAN UTAMA & TOOLS</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-zinc-800 text-xs font-semibold text-zinc-300 px-3 py-1 rounded-xl border border-zinc-700/60"><i class="fas fa-language mr-1 text-brand-lime"></i> Arabic Gamification</span>
+                                <span class="bg-zinc-800 text-xs font-semibold text-zinc-300 px-3 py-1 rounded-xl border border-zinc-700/60"><i class="fas fa-brain mr-1 text-amber-400"></i> Prompt Engineering</span>
+                                <span class="bg-zinc-800 text-xs font-semibold text-zinc-300 px-3 py-1 rounded-xl border border-zinc-700/60"><i class="fas fa-video mr-1 text-sky-400"></i> CapCut / VN Editing</span>
+                                <span class="bg-zinc-800 text-xs font-semibold text-zinc-300 px-3 py-1 rounded-xl border border-zinc-700/60"><i class="fas fa-palette mr-1 text-pink-400"></i> Canva Pro Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education and credentials side stack -->
+                    <div class="md:col-span-5 space-y-6 bg-zinc-950/50 p-6 rounded-[2rem] border border-zinc-800/80">
+                        <div>
+                            <span class="text-brand-lime uppercase tracking-widest font-black text-xs block mb-1">REKAM AKADEMIK</span>
+                            <h3 class="text-xl font-display font-black text-white">Education</h3>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Education Item 1 -->
+                            <div class="relative pl-4 border-l-2 border-brand-lime">
+                                <div class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-brand-lime"></div>
+                                <h4 class="text-xs font-bold text-zinc-400 uppercase">2016 - 2020</h4>
+                                <p class="text-sm font-black text-white">S1 Pendidikan Bahasa Arab</p>
+                                <p class="text-xs text-zinc-400">Universitas Negeri Makassar (UNM)</p>
+                                <span class="inline-block bg-brand-lime/20 text-brand-lime font-black text-[9px] px-2 py-0.5 rounded-full mt-1 border border-brand-lime/30">IPK 3,89 / 4,00</span>
+                            </div>
+
+                            <!-- Education Item 2 -->
+                            <div class="relative pl-4 border-l-2 border-amber-400">
+                                <div class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-amber-400"></div>
+                                <h4 class="text-xs font-bold text-zinc-400 uppercase">2025 - 2026</h4>
+                                <p class="text-sm font-black text-white">Pendidikan Profesi Guru (PPG)</p>
+                                <p class="text-xs text-zinc-400">UIN Raden Fatah Palembang</p>
+                                <span class="inline-block bg-amber-400/20 text-amber-300 font-black text-[9px] px-2 py-0.5 rounded-full mt-1 border border-amber-400/30">Gelar: Gr. (Guru Profesional)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="experience" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- Side indicator -->
+            <div class="lg:col-span-1 hidden lg:flex items-center justify-center">
+                <div class="vertical-text text-[38px] font-display font-black uppercase tracking-widest text-brand-deep/30 dark:text-zinc-800 select-none">
+                    WORK EXPERIENCE
+                </div>
+            </div>
+
+            <!-- Experience Deck Block -->
+            <div class="lg:col-span-11 bg-brand-lime text-brand-deep rounded-[2.5rem] p-6 sm:p-10 border-2 border-brand-deep neo-shadow relative overflow-hidden">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4 border-b border-brand-deep/20 pb-4">
+                    <div>
+                        <span class="text-brand-deep uppercase tracking-widest font-black text-xs block mb-1">DEDIKASI KELAS & STRATEGI</span>
+                        <h3 class="text-2xl sm:text-3xl font-display font-black">Work Experience</h3>
+                    </div>
+                    <span class="bg-brand-deep text-brand-lime text-xs font-black px-4 py-1.5 rounded-full uppercase">MAS PP Al Urwatul Wutsqaa</span>
+                </div>
+
+                <!-- Structured Career Cards in Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Exp Card 1 -->
+                    <div class="bg-white/80 p-5 rounded-[2rem] border border-brand-deep/10 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-brand-deep text-white px-2.5 py-0.5 rounded-md font-extrabold uppercase">2022 - Sekarang</span>
+                            <h4 class="text-base font-display font-black mt-3">Wakil Kepala Madrasah</h4>
+                            <p class="text-xs font-medium text-emerald-800">Bidang Kurikulum</p>
+                            <p class="text-xs text-brand-deep/80 mt-3 leading-relaxed">
+                                Memimpin transformasi kurikulum merdeka, merancang kurikulum adaptif, serta menginisiasi digitalisasi data administrasi akademik berbasis Google Workspace.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Card 2 -->
+                    <div class="bg-white/80 p-5 rounded-[2rem] border border-brand-deep/10 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-brand-deep text-white px-2.5 py-0.5 rounded-md font-extrabold uppercase">2020 - Sekarang</span>
+                            <h4 class="text-base font-display font-black mt-3">Pendidik Bahasa Arab</h4>
+                            <p class="text-xs font-medium text-emerald-800">IT & Gamification</p>
+                            <p class="text-xs text-brand-deep/80 mt-3 leading-relaxed">
+                                Memanfaatkan model interaksi bahasa Arab berbasis permainan, prompt engineering (Gemini/ChatGPT), serta media visual guna melipatgandakan retensi materi siswa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Card 3 -->
+                    <div class="bg-white/80 p-5 rounded-[2rem] border border-brand-deep/10 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-brand-deep text-white px-2.5 py-0.5 rounded-md font-extrabold uppercase">2021 - Sekarang</span>
+                            <h4 class="text-base font-display font-black mt-3">Humas & Operator PDSS</h4>
+                            <p class="text-xs font-medium text-emerald-800">Content Developer</p>
+                            <p class="text-xs text-brand-deep/80 mt-3 leading-relaxed">
+                                Mengelola sistem UBK sekolah, memverifikasi data kelulusan nasional SNBP siswa, serta mengasuh kelas multimedia bimbingan visual jurnalistik santri.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- =============================================
+        PROJECT SHOWCASE SECTION
+        Ganti semua href="#" dengan link yang sebenarnya
+        ============================================= -->
+
+    <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
+
+    <style>
+        .ps-sec-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #16a34a; }
+        .ps-divider { width: 48px; height: 3px; background: #a3e635; border-radius: 99px; margin: 8px auto 6px; }
+        .ps-tab { font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 10px; cursor: pointer; transition: all 0.18s; }
+        .ps-tab.active { background: #1a2e05; color: #d9f99d; border: 1.5px solid #1a2e05; }
+        .ps-tab:not(.active) { background: white; color: #52525b; border: 1px solid #e4e4e7; }
+        .dark .ps-tab:not(.active) { background: #18181b; color: #a1a1aa; border-color: #27272a; }
+
+        .ps-card { background: white; border: 1.5px solid #1a2e05; border-radius: 1.5rem; padding: 14px; transition: transform 0.2s; }
+        .dark .ps-card { background: #18181b; }
+        .ps-card:hover { transform: translateY(-2px); }
+
+        .ps-thumb { border-radius: 12px; height: 140px; display: flex; flex-direction: column; justify-content: space-between; padding: 12px; }
+        .ps-tag { font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 5px; display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ps-design-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; flex: 1; margin: 8px 0; border-radius: 8px; overflow: hidden; }
+        .ps-design-slot { background: rgba(255,255,255,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; min-height: 34px; }
+        .ps-design-slot.empty { border: 1px dashed rgba(255,255,255,0.3); }
+        .ps-year { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+
+        .ps-card-body { padding: 12px 4px 6px; }
+        .ps-card-title { font-size: 14px; font-weight: 700; color: #1a2e05; }
+        .dark .ps-card-title { color: white; }
+        .ps-card-role { font-size: 10px; color: #71717a; font-weight: 600; margin-top: 3px; }
+        .ps-card-desc { font-size: 11px; color: #52525b; margin-top: 8px; line-height: 1.6; }
+        .dark .ps-card-desc { color: #a1a1aa; }
+        .ps-card-link { font-size: 11px; font-weight: 700; color: #15803d; display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; text-decoration: none; }
+        .ps-card-link:hover { text-decoration: underline; }
+
+        /* Video Cards */
+        .ps-video-card { background: white; border: 1px solid #e4e4e7; border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.18s; display: block; }
+        .dark .ps-video-card { background: #18181b; border-color: #27272a; }
+        .ps-video-card:hover { border-color: #a1a1aa; }
+        .ps-video-thumb { height: 90px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .ps-video-thumb .ps-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+        .ps-video-info { padding: 10px; }
+        .ps-video-title { font-size: 12px; font-weight: 600; color: #1a2e05; }
+        .dark .ps-video-title { color: white; }
+        .ps-video-meta { font-size: 10px; color: #71717a; margin-top: 2px; }
+        .ps-video-link { font-size: 10px; color: #15803d; font-weight: 700; display: inline-flex; align-items: center; gap: 3px; margin-top: 6px; text-decoration: none; }
+        .ps-video-link:hover { text-decoration: underline; }
+
+        /* Social Links */
+        .ps-social-link { display: flex; align-items: center; gap: 10px; background: white; border: 1px solid #e4e4e7; border-radius: 12px; padding: 10px 14px; text-decoration: none; color: inherit; transition: border-color 0.18s; }
+        .dark .ps-social-link { background: #18181b; border-color: #27272a; }
+        .ps-social-link:hover { border-color: #a1a1aa; }
+        .ps-social-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        .ps-social-name { font-size: 12px; font-weight: 600; }
+        .ps-social-handle { font-size: 10px; color: #71717a; }
+
+        /* Blog Cards */
+        .ps-blog-card { background: white; border: 1px solid #e4e4e7; border-radius: 12px; padding: 14px; text-decoration: none; color: inherit; transition: border-color 0.18s; display: block; }
+        .dark .ps-blog-card { background: #18181b; border-color: #27272a; }
+        .ps-blog-card:hover { border-color: #a1a1aa; }
+        .ps-blog-tag { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #15803d; background: #dcfce7; padding: 2px 8px; border-radius: 4px; display: inline-block; }
+        .ps-blog-title { font-size: 14px; font-weight: 600; color: #1a2e05; margin-top: 6px; }
+        .dark .ps-blog-title { color: white; }
+        .ps-blog-meta { font-size: 10px; color: #71717a; margin-top: 4px; }
+
+        .ps-sep { border: none; border-top: 1px solid #e4e4e7; margin: 2rem 0; }
+        .dark .ps-sep { border-color: #27272a; }
+        .ps-sub-heading { font-size: 15px; font-weight: 700; color: #1a2e05; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .dark .ps-sub-heading { color: white; }
+
+        .ps-hidden { display: none !important; }
+    </style>
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="ps-sec-label">Portfolio Deck & Galeri</span>
+        <h2 class="text-3xl font-display font-black mt-2">Project Showcase</h2>
+        <div class="ps-divider"></div>
+        <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+        Pekerjaan kolaboratif sekolah mulai dari video, website madrasah, pamflet digital, media sosial, hingga bimbingan visual santri.
+        </p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+        <button onclick="psFilter('all', this)" class="ps-tab active" id="ps-btn-all">Semua Proyek</button>
+        <button onclick="psFilter('video', this)" class="ps-tab" id="ps-btn-video">Film & Video</button>
+        <button onclick="psFilter('design', this)" class="ps-tab" id="ps-btn-design">Desain Pamflet</button>
+        <button onclick="psFilter('portal', this)" class="ps-tab" id="ps-btn-portal">Web & Sosmed</button>
+    </div>
+
+    <!-- ============================
+        SECTION: DESAIN GRAFIS
+        ============================ -->
+    <hr class="ps-sep" data-cat="design">
+    <div class="ps-sub-heading" data-cat="design">
+        <i class="fas fa-palette"></i> Desain Grafis & Visual
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" data-cat="design">
+
+        <!-- Design Card 1: SNBP -->
+        <div class="ps-card">
+        <div class="ps-thumb" style="background: #a3e635;">
+            <span class="ps-tag" style="background:#1a2e05; color:#d9f99d;">Canva & Visual Design</span>
+            <div class="ps-design-grid">
+            <div class="ps-design-slot"><i class="fas fa-certificate" style="color:#1a2e05; font-size:14px;"></i></div>
+            <div class="ps-design-slot"><i class="fas fa-image" style="color:#1a2e05; font-size:14px;"></i></div>
+            <div class="ps-design-slot"><i class="fas fa-th-large" style="color:#1a2e05; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty"></div>
+            <div class="ps-design-slot"><i class="fas fa-star" style="color:#1a2e05; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty"></div>
+            </div>
+            <div class="flex justify-between items-end">
+            <span style="font-size:10px; color:#1a2e05; opacity:0.6;">Digital Pamflet</span>
+            <span class="ps-year" style="background:#1a2e05; color:#d9f99d;">2024–2025</span>
+            </div>
+        </div>
+        <div class="ps-card-body">
+            <h4 class="ps-card-title">Apresiasi SNBP & Kelulusan Digital</h4>
+            <p class="ps-card-role">Peran: Lead Graphic Designer</p>
+            <p class="ps-card-desc">Pamflet kelulusan siswa berprestasi yang lolos ke berbagai kampus nasional ternama, banner digital, konten sosmed, dan materi visual estetik untuk berbagai event.</p>
+            <!-- Ganti href dengan link galeri desain kamu (Google Drive / Behance / dll) -->
+            <a href="https://drive.google.com/file/d/16wZh-W_hn0I6v__HPX751CccNIVdBYRe/view?usp=sharing" class="ps-card-link">Lihat Galeri Desain <i class="fas fa-chevron-right" style="font-size:9px;"></i></a>
+        </div>
+        </div>
+
+        <!-- Design Card 2: Banner & Konten -->
+        <div class="ps-card">
+        <div class="ps-thumb" style="background: #fbbf24;">
+            <span class="ps-tag" style="background:#78350f; color:#fef3c7;">Banner & Konten</span>
+            <div class="ps-design-grid">
+            <div class="ps-design-slot" style="background:rgba(0,0,0,0.15);"><i class="fas fa-flag" style="color:#78350f; font-size:14px;"></i></div>
+            <div class="ps-design-slot" style="background:rgba(0,0,0,0.15);"><i class="fab fa-instagram" style="color:#78350f; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty" style="border-color:rgba(120,53,15,0.3);"></div>
+            <div class="ps-design-slot" style="background:rgba(0,0,0,0.15);"><i class="fas fa-school" style="color:#78350f; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty" style="border-color:rgba(120,53,15,0.3);"></div>
+            <div class="ps-design-slot" style="background:rgba(0,0,0,0.15);"><i class="fas fa-calendar-alt" style="color:#78350f; font-size:14px;"></i></div>
+            </div>
+            <div class="flex justify-between items-end">
+            <span style="font-size:10px; color:#78350f; opacity:0.7;">Event & Sosmed</span>
+            <span class="ps-year" style="background:#78350f; color:#fef3c7;">2021–Now</span>
+            </div>
+        </div>
+        <div class="ps-card-body">
+            <h4 class="ps-card-title">Desain Konten & Banner Event</h4>
+            <p class="ps-card-role">Peran: Content Designer & Operator</p>
+            <p class="ps-card-desc">Visual untuk kegiatan pramuka, FAM Gathering, HGN, dan momen sekolah lainnya — termasuk pamflet, poster acara, dan template konten media sosial.</p>
+            <!-- Ganti href dengan link galeri desain kamu -->
+            <a href="https://drive.google.com/file/d/16wZh-W_hn0I6v__HPX751CccNIVdBYRe/view?usp=sharing" class="ps-card-link">Lihat Galeri Desain <i class="fas fa-chevron-right" style="font-size:9px;"></i></a>
+        </div>
+        </div>
+
+        <!-- Design Card 3: Bimbingan Visual -->
+        <div class="ps-card">
+        <div class="ps-thumb" style="background: #6366f1;">
+            <span class="ps-tag" style="background:#1e1b4b; color:#c7d2fe;">Film & KTI Visual</span>
+            <div class="ps-design-grid">
+            <div class="ps-design-slot" style="background:rgba(255,255,255,0.15);"><i class="fas fa-file-alt" style="color:#c7d2fe; font-size:14px;"></i></div>
+            <div class="ps-design-slot" style="background:rgba(255,255,255,0.15);"><i class="fas fa-film" style="color:#c7d2fe; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty" style="border-color:rgba(255,255,255,0.25);"></div>
+            <div class="ps-design-slot empty" style="border-color:rgba(255,255,255,0.25);"></div>
+            <div class="ps-design-slot" style="background:rgba(255,255,255,0.15);"><i class="fas fa-award" style="color:#c7d2fe; font-size:14px;"></i></div>
+            <div class="ps-design-slot empty" style="border-color:rgba(255,255,255,0.25);"></div>
+            </div>
+            <div class="flex justify-between items-end">
+            <span style="font-size:10px; color:#c7d2fe; opacity:0.7;">Bimbingan Santri</span>
+            <span class="ps-year" style="background:#1e1b4b; color:#c7d2fe;">2022–2025</span>
+            </div>
+        </div>
+        <div class="ps-card-body">
+            <h4 class="ps-card-title">Visual Bimbingan & KTI Santri</h4>
+            <p class="ps-card-role">Peran: Mentor & Visual Guide</p>
+            <p class="ps-card-desc">Mendampingi santri dalam kompetisi, event, dan karya tulis ilmiah — termasuk bimbingan desain visual, presentasi, dan eksplorasi potensi kreatif siswa.</p>
+            <a href="https://drive.google.com/file/d/16wZh-W_hn0I6v__HPX751CccNIVdBYRe/view?usp=sharing" class="ps-card-link">Selengkapnya <i class="fas fa-chevron-right" style="font-size:9px;"></i></a>
+        </div>
+        </div>
+
+    </div>
+
+    <!-- ============================
+        SECTION: FILM & VIDEO
+        ============================ -->
+    <hr class="ps-sep" data-cat="video">
+    <div class="ps-sub-heading" data-cat="video">
+        <i class="fas fa-film"></i> Film & Video Dokumentasi
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-cat="video">
+
+        <!-- Video 1: Jurnal Khumairah -->
+        <a class="ps-video-card" href="#LINK_JURNAL_KHUMAIRAH" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#18181b;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#a3e635;"></i>
+            <span class="ps-badge">Short Film · 2022</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Film Pendek "Jurnal Khumairah"</div>
+            <div class="ps-video-meta">Editor & Soundman · Al Urwah Production</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 2: HGN -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/170qVPSSWmL3y_Tq7URehvTpF46J41ab4/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#0f172a;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#38bdf8;"></i>
+            <span class="ps-badge">Dokumenter · HGN</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Dokumenter Spesial HGN</div>
+            <div class="ps-video-meta">Hari Guru Nasional · Editor & Kameraman</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 3: FAM Gathering -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1Vgp63larvjw8E9UbcwBWfzL-AZmV61pY/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#1c1917;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#fb923c;"></i>
+            <span class="ps-badge">Event · 2022</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">FAM Gathering 2022</div>
+            <div class="ps-video-meta">Dokumentasi & Editing</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 4: Film Sipakatau -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1Xv5dAD_tdeiHJpBaLFe8HOKhiIF0xoYu/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#0d1b2a;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#a78bfa;"></i>
+            <span class="ps-badge">Short Film</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Film "Sipakatau"</div>
+            <div class="ps-video-meta">Sinematografer & Editor</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 5: Hari Pramuka -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1j3sixuKkstx9DZl534Z9gtRjRC5C3v3i/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#134e1b;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#86efac;"></i>
+            <span class="ps-badge">Hari Pramuka</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Dokumentasi Hari Pramuka</div>
+            <div class="ps-video-meta">Kameraman & Editor</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 6: Film KTI -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1QeaFrVth1sV4_-5DP1NbQmZgINsd7pMR/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#1e1b4b;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#c4b5fd;"></i>
+            <span class="ps-badge">KTI · Film</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Film Karya Tulis Ilmiah</div>
+            <div class="ps-video-meta">Produser & Editor</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 7: Penerimaan Tamu Ambalan -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1eoy0bhpGemqk6HusMkNMVCKSm-ZO8etX/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#292524;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#fbbf24;"></i>
+            <span class="ps-badge">Dokumentasi</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Penerimaan Tamu Ambalan</div>
+            <div class="ps-video-meta">Dokumentasi & Editing</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+        <!-- Video 8: Travelog -->
+        <a class="ps-video-card" href="https://drive.google.com/file/d/1zjoLlt6PigShHikckKev33lyfPYKIsXr/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="ps-video-thumb" style="background:#0f2027;">
+            <i class="fas fa-play-circle" style="font-size:28px; color:#67e8f9;"></i>
+            <span class="ps-badge">Travelog</span>
+        </div>
+        <div class="ps-video-info">
+            <div class="ps-video-title">Travelog Series</div>
+            <div class="ps-video-meta">Sutradara & Editor</div>
+            <div class="ps-video-link"><i class="fab fa-youtube"></i> Tonton Video <i class="fas fa-external-link-alt" style="font-size:9px;"></i></div>
+        </div>
+        </a>
+
+    </div>
+
+    <!-- ============================
+        SECTION: WEB & SOSMED
+        ============================ -->
+    <hr class="ps-sep" data-cat="portal">
+    <div class="ps-sub-heading" data-cat="portal">
+        <i class="fas fa-globe"></i> Web & Media Sosial
+    </div>
+    <!-- Social Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5" data-cat="portal">
+
+        <a class="ps-social-link" href="https://www.instagram.com/masppuwbenteng/" target="_blank" rel="noopener">
+        <div class="ps-social-icon" style="background:#fce7f3;"><i class="fab fa-instagram" style="color:#be185d; font-size:16px;"></i></div>
+        <div>
+            <div class="ps-social-name">Instagram Madrasah</div>
+            <div class="ps-social-handle">@masppuwbenteng</div>
+        </div>
+        </a>
+        
+    </div>
+
+    <!-- Web Portal Card -->
+    <div class="ps-card" style="border-width: 1px; border-color: #e4e4e7; border-radius: 12px;" data-cat="portal">
+        <div style="padding: 14px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <i class="fas fa-sitemap" style="font-size:16px; color:#0ea5e9;"></i>
+            <h4 class="ps-card-title">Website Portal & Blog Madrasah</h4>
+        </div>
+        <p class="ps-card-role">Peran: Web Content Manager & Admin · 2021–Now</p>
+        <p class="ps-card-desc" style="font-size:12px;">
+            Membangun dan mengelola website responsif sekolah sebagai sarana blog publikasi, pendaftaran online, pengelolaan konten, dan pengembangan informasi madrasah.
+            Aktif mengelola beberapa akun media sosial sekolah dan membimbing siswa dalam kompetisi, event, serta karya ilmiah untuk mengeksplorasi potensi dan kemampuan mereka.
+        </p>
+        <!-- <a href="https://masppuwbenteng.com" class="ps-card-link" target="_blank" rel="noopener">
+            Kunjungi Website <i class="fas fa-external-link-alt" style="font-size:9px;"></i>
+        </a> -->
+        </div>
+    </div>
+
+    </section>
+
+    <!-- ============================
+        FILTER JAVASCRIPT
+        ============================ -->
+    <script>
+    function psFilter(cat, btn) {
+    // Update active tab
+    document.querySelectorAll('.ps-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Toggle individual cards
+    document.querySelectorAll('[data-cat]').forEach(el => {
+        if (cat === 'all') {
+        el.classList.remove('ps-hidden');
+        } else {
+        if (el.dataset.cat === cat) {
+            el.classList.remove('ps-hidden');
+        } else {
+            el.classList.add('ps-hidden');
+        }
+        }
+    });
+    }
+    </script>
+
+    <section id="certifications" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-black uppercase tracking-wider text-emerald-700 dark:text-brand-lime">SERTIFIKAT KOMPETENSI TEKNIS</span>
+            <h2 class="text-3xl font-display font-black mt-2">Professional Credentials</h2>
+            <div class="w-12 h-1 bg-brand-lime mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Cert 1 (Microsoft) -->
+            <div class="bg-white dark:bg-zinc-900 p-5 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-brand-lime shrink-0">
+                    <i class="fab fa-microsoft text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-black text-brand-deep dark:text-white text-sm">MCE - Abad 21</h4>
+                    <p class="text-[10px] text-emerald-700 dark:text-brand-lime font-bold">Microsoft Certified Educator</p>
+                    <p class="text-[11px] text-zinc-500 mt-1">Validasi internasional perancangan model belajar modern.</p>
+                </div>
+            </div>
+
+            <!-- Cert 2 (Google Level 2) -->
+            <div class="bg-white dark:bg-zinc-900 p-5 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-brand-lime shrink-0">
+                    <i class="fab fa-google text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-black text-brand-deep dark:text-white text-sm">Google Educator L1 & L2</h4>
+                    <p class="text-[10px] text-emerald-700 dark:text-brand-lime font-bold">Google Certified</p>
+                    <p class="text-[11px] text-zinc-500 mt-1">Kemahiran penuh Google Workspace for Education.</p>
+                </div>
+            </div>
+
+            <!-- Cert 3 (Gemini AI) -->
+            <div class="bg-white dark:bg-zinc-900 p-5 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-brand-lime shrink-0">
+                    <i class="fas fa-brain text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-black text-brand-deep dark:text-white text-sm">Gemini Certified</h4>
+                    <p class="text-[10px] text-emerald-700 dark:text-brand-lime font-bold">Google AI Education</p>
+                    <p class="text-[11px] text-zinc-500 mt-1">Keahlian rekayasa instruksi pembelajaran kecerdasan buatan.</p>
+                </div>
+            </div>
+
+            <!-- Cert 4 (Tasheel perfect) -->
+            <div class="bg-white dark:bg-zinc-900 p-5 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-brand-lime shrink-0">
+                    <i class="fas fa-language text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-black text-brand-deep dark:text-white text-sm">Tasheel Arab 100/100</h4>
+                    <p class="text-[10px] text-emerald-700 dark:text-brand-lime font-bold">Sertifikasi Bahasa Arab</p>
+                    <p class="text-[11px] text-zinc-500 mt-1">Skor sempurna 100 dalam tata bahasa & percakapan Arab.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
+        <div class="bg-zinc-900 text-white rounded-[2.5rem] p-6 sm:p-10 border border-zinc-800 shadow-xl relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-lime/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-brand-lime font-black tracking-widest text-xs uppercase">MULAI PROYEK BARU</span>
+                    <h3 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight">Hubungi Jhua Halim</h3>
+                    <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed max-w-md">
+                        Tertarik menerapkan integrasi kecerdasan buatan (AI) di sekolah Anda, berkolaborasi dengan kurikulum modern, atau mengadakan seminar konten kreator santri? Kontak saya langsung lewat tombol berikut:
+                    </p>
+
+                    <div class="space-y-3 pt-3">
+                        <a href="https://wa.me/6282346425260" target="_blank" class="flex items-center space-x-3 text-zinc-300 hover:text-brand-lime transition">
+                            <span class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-brand-lime text-xs"><i class="fas fa-phone-alt"></i></span>
+                            <span class="text-xs sm:text-sm font-bold">+62 823-4642-5260</span>
+                        </a>
+                        <a href="mailto:juwainimuh.hlm@gmail.com" class="flex items-center space-x-3 text-zinc-300 hover:text-brand-lime transition">
+                            <span class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-brand-lime text-xs"><i class="fas fa-envelope"></i></span>
+                            <span class="text-xs sm:text-sm font-bold">juwainimuh.hlm@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+    <div id="showcase-detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+        <!-- Overlay -->
+        <div onclick="closeModalDetails()" class="fixed inset-0 bg-black/75 backdrop-blur-sm"></div>
+        <!-- Modal body -->
+        <div class="relative bg-zinc-900 text-white rounded-[2.5rem] w-full max-w-xl p-6 sm:p-8 shadow-2xl border border-zinc-800 z-10">
+            <button onclick="closeModalDetails()" class="absolute top-5 right-5 p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modal-container-body">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500">
+        <div>
+            <p class="text-xs font-bold text-brand-deep dark:text-zinc-300">Muh. Juwaini Halim, S.Pd., Gr.</p>
+            <p class="text-[10px] mt-0.5">© 2026 Creative Personal Portfolio. Crafted with passion & EdTech.</p>
+        </div>
+        <div class="flex space-x-3.5">
+            <a href="https://linkedin.com/in/juwainihalim" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-200 dark:bg-zinc-900 hover:bg-brand-lime hover:text-brand-deep flex items-center justify-center transition"><i class="fab fa-linkedin-in text-xs"></i></a>
+            <a href="https://instagram.com/jhua.halim" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-200 dark:bg-zinc-900 hover:bg-brand-lime hover:text-brand-deep flex items-center justify-center transition"><i class="fab fa-instagram text-xs"></i></a>
+            <a href="https://linktr.ee/jhua.halim" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-200 dark:bg-zinc-900 hover:bg-brand-lime hover:text-brand-deep flex items-center justify-center transition"><i class="fas fa-link text-xs"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // ----------------------------------------------------
+        // Theme Toggle Logic (Light / Dark Mode)
+        // ----------------------------------------------------
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = "fas fa-moon";
+                localStorage.setItem('cv_theme', 'light');
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = "fas fa-sun text-brand-lime";
+                localStorage.setItem('cv_theme', 'dark');
+            }
+        }
+
+        // Apply dark mode by default or from user preferences
+        if (localStorage.getItem('cv_theme') === 'dark' || (!('cv_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').className = "fas fa-sun text-brand-lime";
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // ----------------------------------------------------
+        // Arabic matching Game Logic
+        // ----------------------------------------------------
+        function evaluateGame() {
+            const feedback = document.getElementById('game-res-box');
+            const m1 = document.getElementById('ar-match-1').value;
+            const m2 = document.getElementById('ar-match-2').value;
+            const m3 = document.getElementById('ar-match-3').value;
+
+            if (!m1 || !m2 || !m3) {
+                feedback.className = "mt-4 p-3 rounded-xl text-xs text-center bg-amber-500/20 text-amber-300 border border-amber-500/40 block";
+                feedback.innerHTML = "Harap selesaikan seluruh tebakan kata di atas!";
+                return;
+            }
+
+            if (m1 === 'guru' && m2 === 'sekolah' && m3 === 'buku') {
+                feedback.className = "mt-4 p-3 rounded-xl text-xs text-center bg-brand-lime/20 text-brand-lime border border-brand-lime/40 block";
+                feedback.innerHTML = "ممتاز (Mumtaz)! Semua tebakan benar. Gamifikasi ini melipatgandakan kecepatan hafal siswa!";
+            } else {
+                feedback.className = "mt-4 p-3 rounded-xl text-xs text-center bg-rose-500/20 text-rose-300 border border-rose-500/40 block";
+                feedback.innerHTML = "Ups! Beberapa pilihan masih kurang pas. Silakan teliti kembali ya!";
+            }
+        }
+
+        function clearGame() {
+            document.getElementById('ar-match-1').value = "";
+            document.getElementById('ar-match-2').value = "";
+            document.getElementById('ar-match-3').value = "";
+            document.getElementById('game-res-box').classList.add('hidden');
+        }
+
+        // ----------------------------------------------------
+        // AI Prompt generator logic
+        // ----------------------------------------------------
+        function createAIPrompt() {
+            const top = document.getElementById('prompt-top').value;
+            const meth = document.getElementById('prompt-meth').value;
+            const resultBox = document.getElementById('prompt-result-text');
+
+            const structuredPrompt = `Act as an expert 21st-century instructional planner. Generate an interactive, highly engaging lesson plan (RPP) focusing on "${top}" based on the "${meth}" methodology. Incorporate gamified assessments and real-world collaboration prompts suitable for high school students.`;
+            resultBox.innerText = structuredPrompt;
+        }
+
+        function copyToClipboard() {
+            const promptText = document.getElementById('prompt-result-text').innerText;
+            if (promptText.includes("Pilih opsi di atas")) {
+                return;
+            }
+
+            const mockArea = document.createElement('textarea');
+            mockArea.value = promptText;
+            document.body.appendChild(mockArea);
+            mockArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(mockArea);
+
+            const copyBtnIcon = document.getElementById('copy-icon');
+            copyBtnIcon.className = "fas fa-check text-brand-lime";
+            setTimeout(() => {
+                copyBtnIcon.className = "fas fa-copy";
+            }, 1800);
+        }
+
+        // ----------------------------------------------------
+        // Project Filtering Logic
+        // ----------------------------------------------------
+        function filterProjects(cat) {
+            const cards = document.querySelectorAll('.project-deck-card');
+            const tabs = document.querySelectorAll('.showcase-tab');
+
+            tabs.forEach(tab => {
+                tab.className = "showcase-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800";
+            });
+
+            const activeBtn = document.getElementById(`btn-${cat}`);
+            if (activeBtn) {
+                activeBtn.className = "showcase-tab px-4 py-2 rounded-xl text-xs font-bold bg-brand-deep text-white shadow-sm dark:bg-brand-lime dark:text-brand-deep";
+            }
+
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // Details Modal Logic & Data
+        // ----------------------------------------------------
+        const detailedProjects = {
+            'jurnal-khum': {
+                title: 'Film Pendek "Jurnal Khumairah"',
+                role: 'Editor & Soundman — Al Urwah Production (2022)',
+                tag: 'Prestasi Provinsi',
+                desc: 'Jurnal Khumairah adalah proyek sinematik berdurasi pendek garapan sekolah MAS PP Al Urwatul Wutsqaa. Jhua Halim bertindak langsung di ruang penyuntingan visual dan arsitektur suara. Proyek ini sukses merebut penghargaan istimewa tingkat Provinsi Sulawesi Selatan.',
+                highlights: [
+                    'Meraih penghargaan film pendek madrasah tingkat provinsi.',
+                    'Dikerjakan menggunakan tools editing mobile profesional (CapCut/VN).',
+                    'Fokus storytelling emosional mendalam tentang perjuangan menuntut ilmu santri.'
+                ]
+            },
+            'snbp-pamph': {
+                title: 'Pamflet Apresiasi Kelulusan SNBP',
+                role: 'Lead Graphic Designer',
+                tag: 'Canva Design & Visual Strategy',
+                desc: 'Media publikasi visual yang memuat dokumentasi prestasi siswa-siswi MAS PP Al Urwatul Wutsqaa yang sukses menembus rujukan Seleksi Nasional Berbasis Prestasi (SNBP). Mengutamakan konsistensi branding sekolah modern.',
+                highlights: [
+                    'Meningkatkan traffic akun resmi sekolah di Instagram hingga 150%.',
+                    'Integrasi aset orisinal yang dioptimalkan melalui teknologi pendukung AI.',
+                    'Gaya visual modern yang ramah audiens muda masa kini.'
+                ]
+            },
+            'web-portal': {
+                title: 'Situs Resmi masppuwbenteng.com',
+                role: 'Web Content Manager & Administrator',
+                tag: 'Web & Portal',
+                desc: 'Pengembangan portal interaktif resmi madrasah. Menyediakan kanal informasi satu pintu terpadu meliputi berita terkini, e-raport, data alumni, bimbingan karier siswa, serta publikasi esai ilmiah santri.',
+                highlights: [
+                    'Sistem e-Raport terpadu yang dapat diakses oleh orang tua.',
+                    'Arsitektur responsif yang andal dan aman.',
+                    'Media latih kepenulisan santri melalui wadah blog portal ilmiah madrasah.'
+                ]
+            }
+        };
+
+        function openModalDetails(key) {
+            const data = detailedProjects[key];
+            if (!data) return;
+
+            const modal = document.getElementById('showcase-detail-modal');
+            const body = document.getElementById('modal-container-body');
+
+            body.innerHTML = `
+                <span class="inline-block bg-brand-lime text-brand-deep text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider mb-2">${data.tag}</span>
+                <h3 class="text-2xl font-display font-black text-white">${data.title}</h3>
+                <p class="text-xs text-brand-lime font-bold mt-1">${data.role}</p>
+                
+                <hr class="my-4 border-zinc-800">
+                
+                <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-6">
+                    ${data.desc}
+                </p>
+
+                <h4 class="font-display font-black text-xs uppercase tracking-wider text-zinc-400 mb-3">Sorotan & Pencapaian Utama:</h4>
+                <ul class="space-y-2">
+                    ${data.highlights.map(item => `
+                        <li class="flex items-start text-xs text-zinc-300">
+                            <i class="fas fa-check-circle text-brand-lime mr-2.5 mt-1 text-[11px]"></i>
+                            <span>${item}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModalDetails() {
+            const modal = document.getElementById('showcase-detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ----------------------------------------------------
+        // Proposal Submission Demo
+        // ----------------------------------------------------
+        function handleDemoContact(e) {
+            e.preventDefault();
+            const successText = document.getElementById('demo-success');
+            
+            successText.classList.remove('hidden');
+            e.target.reset();
+
+            setTimeout(() => {
+                successText.classList.add('hidden');
+            }, 4500);
+        }
+    </script>
+</body>
+</html>
